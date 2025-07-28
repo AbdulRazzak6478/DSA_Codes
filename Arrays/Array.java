@@ -23,7 +23,7 @@ class Array {
         for (int i = 0; i < length; i++) {
             arr[i] = sc.nextInt();
         }
-        // sc.close();
+        sc.close();
         return arr;
     }
 
@@ -214,7 +214,7 @@ class Array {
         }
 
         System.out.println("Total Sub Arrays : " + totalSubArrays);
-        // sc.close();
+        sc.close();
     }
 
     public static void getMaxSubArraySum() {
@@ -250,6 +250,7 @@ class Array {
             }
             // maxSum=Math.max(nums);
             System.out.println("Maximum Sub Array Sum with Kadane's Algorithm : " + maxSum);
+            sc.close();
             return;
         }
         maxSum = Integer.MIN_VALUE;
@@ -296,6 +297,7 @@ class Array {
         }
         System.out.println("Maximum Sub Array Sum With Brute force: " + maxSum);
         System.out.println("Total Sub Arrays: " + totalSubArrays);
+        sc.close();
     }
 
     public static void main(StringTopic[] args) {
@@ -311,21 +313,21 @@ class Array {
         // System.out.println("Value:
         // "+byteType+shortType+charType+booleanType+intType+longType+floatType+doubleType);
 
-        Scanner sc = new Scanner(System.in);
-        boolean isCompleted = false;
-        // Rotate Array
-        while (isCompleted != true) {
-            System.out.println();
-            // Rotate Elements
-            // rotateArrayByNumber();
-            // getAllNonEmptySubArrays();
-            getMaxSubArraySum();
-            System.out.println("Enter 1 to Continue or 0 to Exist : ");
-            int value = sc.nextInt();
-            if (value == 0) {
-                isCompleted = true;
-            }
-        }
-        sc.close();
+        // Scanner sc = new Scanner(System.in);
+        // boolean isCompleted = false;
+        // // Rotate Array
+        // while (isCompleted != true) {
+        //     System.out.println();
+        //     // Rotate Elements
+        //     // rotateArrayByNumber();
+        //     // getAllNonEmptySubArrays();
+        //     getMaxSubArraySum();
+        //     System.out.println("Enter 1 to Continue or 0 to Exist : ");
+        //     int value = sc.nextInt();
+        //     if (value == 0) {
+        //         isCompleted = true;
+        //     }
+        // }
+        // sc.close();
     }
 }
