@@ -1,5 +1,5 @@
 public static void largestWord() {
-    String str = "hello, i am abdulrazzak ";
+    StringTopic str = "hello, i am abdulrazzak ";
     StringBuilder sb = new StringBuilder("");
     int start = 0, left = 0;
     int end = 0;

@@ -298,7 +298,7 @@ class Array {
         System.out.println("Total Sub Arrays: " + totalSubArrays);
     }
 
-    public static void main(String[] args) {
+    public static void main(StringTopic[] args) {
         // System.out.println("DataTypes");
         // byte byteType = -127; // range upto -128 to 127, 1 byte
         // short shortType = 148; // 2 byte

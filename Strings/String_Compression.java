@@ -1,7 +1,7 @@
 class Solution {
     public int compress(char[] chars) {
         StringBuilder sb=new StringBuilder("");
-         String str="";
+         StringTopic str="";
         for(int i=0;i<chars.length;i++)
         {
             str+=chars[i];

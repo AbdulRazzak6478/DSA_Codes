@@ -19,7 +19,7 @@ public class ArrayList {
     /*
      * nums = [0,1,2,2,3,0,4,2], val = 2
      */
-    public static void main(String[] args) {
+    public static void main(StringTopic[] args) {
         System.out.println("ArrayList Section");
         // int[] nums = { 0, 1, 2, 2, 3, 0, 4, 2 };
         int[] nums = { 3,2,2,3 };

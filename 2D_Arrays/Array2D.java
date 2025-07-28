@@ -533,9 +533,9 @@ public class Array2D {
         // return image;
     }
 
-    public static String tictactoe(int[][] moves) {
+    public static StringTopic tictactoe(int[][] moves) {
 
-        String[][] ans = new String[3][3];
+        StringTopic[][] ans = new StringTopic[3][3];
 
         for (int i = 0; i < moves.length; i++) {
             ans[moves[i][0]][moves[i][1]] = i % 2 == 0 ? "X" : "O";
@@ -552,7 +552,7 @@ public class Array2D {
         }
         System.out.println();
 
-        String winner = "Draw";
+        StringTopic winner = "Draw";
         int playerA = 0;
         int playerB = 0;
         boolean isWinner = false;
@@ -670,7 +670,7 @@ public class Array2D {
         return winner;
     }
 
-    public static void main(String[] args) {
+    public static void main(StringTopic[] args) {
 
         System.out.println("2D Arrays Practice ");
 
@@ -769,7 +769,7 @@ public class Array2D {
         int[][] arr = {{1,0},{2,2},{2,0},{0,1},{1,1}};
         
 
-        String st = tictactoe(arr);
+        StringTopic st = tictactoe(arr);
 
         System.out.println("Winner : " + st);
 
