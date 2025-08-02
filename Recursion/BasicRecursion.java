@@ -1,5 +1,7 @@
 package Recursion;
 
+import java.util.Arrays;
+
 public class BasicRecursion {
 
     public static void increment(int n) {
@@ -164,7 +166,43 @@ public class BasicRecursion {
         return str.charAt(0) != str.charAt(str.length() - 1) ? false : isPalindrome(str.substring(1, str.length() - 1));
     }
 
-    
+    public static String addConsecutiveString(String str, int i) {
+        if (str.length() - 1 == i)
+            return str;
+
+        if (str.charAt(i) == str.charAt(i + 1)) {
+            str = str.substring(0, i + 1) + "*" + str.substring(i + 1);
+            i = i + 1;
+        }
+        return addConsecutiveString(str, i + 1);
+    }
+
+    public static String moveXToEndString(String str, int i, int s, int e, StringBuilder newStr) {
+        if (str.length() == i) {
+            return newStr.toString();
+        }
+        if (str.charAt(i) == 'x') {
+            newStr.setCharAt(e, 'x');
+            e--;
+        } else {
+            newStr.setCharAt(s, str.charAt(i));
+            s++;
+        }
+
+        return moveXToEndString(str, i + 1, s, e, newStr);
+    }
+
+    public static String bracketString(String str, int i, int s) {
+        if (str.charAt(i) == ')' || str.length() - 1 == i) {
+            if (s + 1 == i)
+                return "";
+            return str.substring(s + 1, i );
+        }
+        if (str.charAt(i) == '(') {
+            s = i;
+        }
+        return bracketString(str, i + 1, s);
+    }
 
     public static void main(String[] args) {
         System.out.println("Basic Recursion : ");
@@ -204,11 +242,20 @@ public class BasicRecursion {
         System.out.println("Convert The Number String into Number :" + stringToNumber("12345") + " (Type: "
                 + ((Object) stringToNumber("12345")).getClass().getSimpleName() + ")");
 
-    
         System.out.println();
-        System.out.println("Is String is palindrome : "+isPalindrome("racecar"));
-                
-                
+        System.out.println("Is String is palindrome : " + isPalindrome("racecar"));
+
+        System.out.println();
+        System.out.println("Add * Into duplicate Consecutive characters : "
+                + addConsecutiveString("I  m aa softtwaree engiineer", 0));
+
+        System.out.println();
+        String str = "axbcdxxexfgxhxixxjklmxxnoxpqxxrxsxtxuxvxwxyxz";
+        System.out.println(
+                "Move x To End Of String : " + moveXToEndString(str, 0, 0, str.length() - 1, new StringBuilder(str)));
+
+        System.out.println();
+        System.out.println("Get The Bracket String : " + bracketString("(fgghgh)", 0, 0));
     }
 
 }
