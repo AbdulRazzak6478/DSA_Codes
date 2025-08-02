@@ -126,6 +126,34 @@ public class BasicRecursion {
     // }
     // }
 
+    public static int sumOfStringDigits(String numStr){
+
+        // '4' - '0' => 4
+        if(numStr.length() == 1) return numStr.charAt(0) - '0';
+
+        return (numStr.charAt(0) - '0') + sumOfStringDigits(numStr.substring(1));
+    }
+
+    public static int stringToNumber(String numStr)
+    {
+        if(numStr.length() == 1) return numStr.charAt(0) - '0';
+
+        // int length = numStr.length() - 1;
+        // int digit = numStr.charAt(0) - '0';
+        // while(length != 0)
+        // {
+        //     digit*= 10;
+        //     length--;
+        // }
+        // return stringToNumber(numStr.substring(1)) + digit;
+        
+        // For Reverse Num
+        int digit = numStr.charAt(0) - '0';
+        int num = stringToNumber(numStr.substring(1)) * 10;
+        return num + digit;
+    }
+
+
     public static void main(String[] args) {
         System.out.println("Basic Recursion : ");
 
@@ -157,6 +185,13 @@ public class BasicRecursion {
         System.out.println("Max Element : " + findMaxElement(new int[] { 1, 2, 12, 4, 19, 3, 4, 6, 5, 2 }, 0));
         System.out.println();
         System.out.println("Sum Of Elements : " + sumOfElements(new int[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 }, 0));
+
+
+        System.out.println();
+        System.out.println("Sum Of Digits Of String : "+sumOfStringDigits("12345")+" "+('4' - '0'));
+        System.out.println();
+        System.out.println("Convert The Number String into Number :" + stringToNumber("12345") + " (Type: " + ((Object)stringToNumber("12345")).getClass().getSimpleName() + ")");
+        
     }
 
 }
