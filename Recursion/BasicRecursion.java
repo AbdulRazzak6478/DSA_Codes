@@ -126,33 +126,45 @@ public class BasicRecursion {
     // }
     // }
 
-    public static int sumOfStringDigits(String numStr){
+    public static int sumOfStringDigits(String numStr) {
 
         // '4' - '0' => 4
-        if(numStr.length() == 1) return numStr.charAt(0) - '0';
+        if (numStr.length() == 1)
+            return numStr.charAt(0) - '0';
 
         return (numStr.charAt(0) - '0') + sumOfStringDigits(numStr.substring(1));
     }
 
-    public static int stringToNumber(String numStr)
-    {
-        if(numStr.length() == 1) return numStr.charAt(0) - '0';
+    public static int stringToNumber(String numStr) {
+        if (numStr.length() == 1)
+            return numStr.charAt(0) - '0';
 
         // int length = numStr.length() - 1;
         // int digit = numStr.charAt(0) - '0';
         // while(length != 0)
         // {
-        //     digit*= 10;
-        //     length--;
+        // digit*= 10;
+        // length--;
         // }
         // return stringToNumber(numStr.substring(1)) + digit;
-        
+
         // For Reverse Num
         int digit = numStr.charAt(0) - '0';
         int num = stringToNumber(numStr.substring(1)) * 10;
         return num + digit;
     }
 
+    public static boolean isPalindrome(String str) {
+        if (str.length() == 1)
+            return true;
+        if (str.length() == 2 && str.charAt(0) == str.charAt(1)) {
+            return true;
+        }
+
+        return str.charAt(0) != str.charAt(str.length() - 1) ? false : isPalindrome(str.substring(1, str.length() - 1));
+    }
+
+    
 
     public static void main(String[] args) {
         System.out.println("Basic Recursion : ");
@@ -186,12 +198,17 @@ public class BasicRecursion {
         System.out.println();
         System.out.println("Sum Of Elements : " + sumOfElements(new int[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 }, 0));
 
+        System.out.println();
+        System.out.println("Sum Of Digits Of String : " + sumOfStringDigits("12345") + " " + ('4' - '0'));
+        System.out.println();
+        System.out.println("Convert The Number String into Number :" + stringToNumber("12345") + " (Type: "
+                + ((Object) stringToNumber("12345")).getClass().getSimpleName() + ")");
 
+    
         System.out.println();
-        System.out.println("Sum Of Digits Of String : "+sumOfStringDigits("12345")+" "+('4' - '0'));
-        System.out.println();
-        System.out.println("Convert The Number String into Number :" + stringToNumber("12345") + " (Type: " + ((Object)stringToNumber("12345")).getClass().getSimpleName() + ")");
-        
+        System.out.println("Is String is palindrome : "+isPalindrome("racecar"));
+                
+                
     }
 
 }
