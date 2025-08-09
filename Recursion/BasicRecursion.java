@@ -382,6 +382,50 @@ public class BasicRecursion {
 
     public static String[] result = { "", "", "abc", "def", "ghi", "jkl", "mno", "pqrs", "tuv", "wxyz" };
 
+    
+    public static void keyboardLetterCombinations(String num, int i, String ans) {
+
+        if(num.length() == i) {
+            System.out.println("["+ans+"]");
+            return;
+        }
+        int digit = num.charAt(i) - '0';
+        for (int k = 0; k < result[digit].length(); k++) {
+            keyboardLetterCombinations(num, i + 1, ans + result[digit].charAt(k));
+        }
+    }
+
+    // public static void lexicalOrder(int n,int i)
+    // {
+    //     if(i<=n){
+    //         if(i != 0) 
+    //         {
+    //             System.out.print(i+" ");
+    //         }
+    //     }else{
+    //         return;
+    //     }
+
+    //     for(int k=0;k<=9;k++)
+    //     {
+    //         if(i==0 && k==0) continue;
+    //         lexicalOrder(n, i * 10 + k);
+    //     }
+    // }
+
+    // public static int possibleWaysToTarget(int n, int m, int r, int c,String ans)
+    // {
+    //     if( r == n-1 && c == m-1)
+    //     {
+    //         System.out.println(ans);
+    //         return 1;
+    //     }
+
+    //     if( r >= n || c >= m) return 0;
+
+    //     return possibleWaysToTarget(n, m, r, c+1,ans+"R") + possibleWaysToTarget(n, m, r+1, c,ans+"D");
+    // }
+
     public static void main(String[] args) {
         System.out.println("Basic Recursion : ");
 
