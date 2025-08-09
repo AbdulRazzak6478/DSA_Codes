@@ -395,23 +395,23 @@ public class BasicRecursion {
         }
     }
 
-    // public static void lexicalOrder(int n,int i)
-    // {
-    //     if(i<=n){
-    //         if(i != 0) 
-    //         {
-    //             System.out.print(i+" ");
-    //         }
-    //     }else{
-    //         return;
-    //     }
+    public static void lexicalOrder(int n,int i)
+    {
+        if(i<=n){
+            if(i != 0) 
+            {
+                System.out.print(i+" ");
+            }
+        }else{
+            return;
+        }
 
-    //     for(int k=0;k<=9;k++)
-    //     {
-    //         if(i==0 && k==0) continue;
-    //         lexicalOrder(n, i * 10 + k);
-    //     }
-    // }
+        for(int k=0;k<=9;k++)
+        {
+            if(i==0 && k==0) continue;
+            lexicalOrder(n, i * 10 + k);
+        }
+    }
 
     // public static int possibleWaysToTarget(int n, int m, int r, int c,String ans)
     // {
