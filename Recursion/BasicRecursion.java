@@ -413,18 +413,18 @@ public class BasicRecursion {
         }
     }
 
-    // public static int possibleWaysToTarget(int n, int m, int r, int c,String ans)
-    // {
-    //     if( r == n-1 && c == m-1)
-    //     {
-    //         System.out.println(ans);
-    //         return 1;
-    //     }
+    public static int possibleWaysToTarget(int n, int m, int r, int c,String ans)
+    {
+        if( r == n-1 && c == m-1)
+        {
+            System.out.println(ans);
+            return 1;
+        }
 
-    //     if( r >= n || c >= m) return 0;
+        if( r >= n || c >= m) return 0;
 
-    //     return possibleWaysToTarget(n, m, r, c+1,ans+"R") + possibleWaysToTarget(n, m, r+1, c,ans+"D");
-    // }
+        return possibleWaysToTarget(n, m, r, c+1,ans+"R") + possibleWaysToTarget(n, m, r+1, c,ans+"D");
+    }
 
     public static void main(String[] args) {
         System.out.println("Basic Recursion : ");
