@@ -1,6 +1,7 @@
 package Recursion;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class BasicRecursion {
 
@@ -426,6 +427,20 @@ public class BasicRecursion {
         return possibleWaysToTarget(n, m, r, c+1,ans+"R") + possibleWaysToTarget(n, m, r+1, c,ans+"D");
     }
 
+   
+    public static void asciiSubsequence(String str,int i,String ans)
+    {
+        if(i == str.length()) {
+            System.out.println("["+ans+"]");
+            return;
+        }
+
+        int asci = str.charAt(i) - 'a' + 97;
+        asciiSubsequence(str, i+1, ans + str.charAt(i));
+        asciiSubsequence(str, i+1, ans + asci);
+        asciiSubsequence(str, i+1, ans);
+    }
+   
     public static void main(String[] args) {
         System.out.println("Basic Recursion : ");
 
@@ -528,7 +543,20 @@ public class BasicRecursion {
 
         System.out.println();
         System.out.println("Possible Ways To Reach a Location: ");
-        System.out.println(" Total Ways : "+possibleWaysToTarget(5,5,0,0,""));
+        System.out.println(" Total Ways : "+possibleWaysToTarget(3,3,0,0,""));
+        System.out.println();
+
+        String[] sort = {"cba","bca","acb","abc","cab","bac"};
+
+        // Arrays.sort(arr);
+        // for(int i=0;i<sort.length;i++)
+        // {
+        //     System.out.print(sort[i]+" ");
+        // }
+
+
+        
+
 
         // int n = 3;
 
