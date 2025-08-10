@@ -454,6 +454,12 @@ public class BasicRecursion {
         return sum;
     }
 
+    public static int personPossibleWays(int n)
+    {
+        if(n == 1 || n == 2) return n; 
+
+        return personPossibleWays(n-1) + (n-1) * personPossibleWays(n-2);
+    }
     public static void main(String[] args) {
         System.out.println("Basic Recursion : ");
 
@@ -577,6 +583,8 @@ public class BasicRecursion {
         int[] seq = {1,2,3,2,4,2};
         System.out.println("Total Subsets : "+subsetSumToTarget(seq,0,6,new ArrayList<>()));
 
+        System.out.println();
+        System.out.println("Person Ways to Go On Party : "+personPossibleWays(6));
         // int n = 3;
 
         // double length = Math.pow((double)2, (double)n);
