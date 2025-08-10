@@ -383,11 +383,10 @@ public class BasicRecursion {
 
     public static String[] result = { "", "", "abc", "def", "ghi", "jkl", "mno", "pqrs", "tuv", "wxyz" };
 
-    
     public static void keyboardLetterCombinations(String num, int i, String ans) {
 
-        if(num.length() == i) {
-            System.out.println("["+ans+"]");
+        if (num.length() == i) {
+            System.out.println("[" + ans + "]");
             return;
         }
         int digit = num.charAt(i) - '0';
@@ -396,51 +395,65 @@ public class BasicRecursion {
         }
     }
 
-    public static void lexicalOrder(int n,int i)
-    {
-        if(i<=n){
-            if(i != 0) 
-            {
-                System.out.print(i+" ");
+    public static void lexicalOrder(int n, int i) {
+        if (i <= n) {
+            if (i != 0) {
+                System.out.print(i + " ");
             }
-        }else{
+        } else {
             return;
         }
 
-        for(int k=0;k<=9;k++)
-        {
-            if(i==0 && k==0) continue;
+        for (int k = 0; k <= 9; k++) {
+            if (i == 0 && k == 0)
+                continue;
             lexicalOrder(n, i * 10 + k);
         }
     }
 
-    public static int possibleWaysToTarget(int n, int m, int r, int c,String ans)
-    {
-        if( r == n-1 && c == m-1)
-        {
+    public static int possibleWaysToTarget(int n, int m, int r, int c, String ans) {
+        if (r == n - 1 && c == m - 1) {
             System.out.println(ans);
             return 1;
         }
 
-        if( r >= n || c >= m) return 0;
+        if (r >= n || c >= m)
+            return 0;
 
-        return possibleWaysToTarget(n, m, r, c+1,ans+"R") + possibleWaysToTarget(n, m, r+1, c,ans+"D");
+        return possibleWaysToTarget(n, m, r, c + 1, ans + "R") + possibleWaysToTarget(n, m, r + 1, c, ans + "D");
     }
 
-   
-    public static void asciiSubsequence(String str,int i,String ans)
-    {
-        if(i == str.length()) {
-            System.out.println("["+ans+"]");
-            return;
+    public static int asciiSubsequence(String str, int i, String ans) {
+        if (i == str.length()) {
+            System.out.println("[" + ans + "]");
+            return 1;
         }
 
         int asci = str.charAt(i) - 'a' + 97;
-        asciiSubsequence(str, i+1, ans + str.charAt(i));
-        asciiSubsequence(str, i+1, ans + asci);
-        asciiSubsequence(str, i+1, ans);
+        return asciiSubsequence(str, i + 1, ans + str.charAt(i)) + asciiSubsequence(str, i + 1, ans + asci)
+                + asciiSubsequence(str, i + 1, ans);
     }
-   
+
+    public static int subsetSumToTarget(int[] arr, int i, int target, ArrayList<Integer> ans) {
+        if (i == arr.length) {
+            int sum = 0;
+            for (int j = 0; j < ans.size(); j++) {
+                sum += ans.get(j);
+            }
+            if (sum == target) {
+                System.out.println(ans);
+                return 1;
+            }
+            // System.out.println(ans);
+            return 0;
+        }
+        ans.add(arr[i]);
+        int sum = subsetSumToTarget(arr, i + 1, target, ans);
+        ans.remove(ans.size() - 1);
+        sum +=subsetSumToTarget(arr, i + 1, target, ans);
+        return sum;
+    }
+
     public static void main(String[] args) {
         System.out.println("Basic Recursion : ");
 
@@ -535,28 +548,34 @@ public class BasicRecursion {
         StringSubsequence2("abc", 0, "");
         System.out.println();
         System.out.println("Number Letters Combinations");
-        keyboardLetterCombinations("23",0,"");
+        keyboardLetterCombinations("23", 0, "");
 
         System.out.println();
         System.out.println("LexicalOrder :");
-        lexicalOrder(13,0);
+        lexicalOrder(13, 0);
 
         System.out.println();
         System.out.println("Possible Ways To Reach a Location: ");
-        System.out.println(" Total Ways : "+possibleWaysToTarget(3,3,0,0,""));
+        System.out.println(" Total Ways : " + possibleWaysToTarget(3, 3, 0, 0, ""));
         System.out.println();
 
-        String[] sort = {"cba","bca","acb","abc","cab","bac"};
+        String[] sort = { "cba", "bca", "acb", "abc", "cab", "bac" };
 
         // Arrays.sort(arr);
         // for(int i=0;i<sort.length;i++)
         // {
-        //     System.out.print(sort[i]+" ");
+        // System.out.print(sort[i]+" ");
         // }
 
+        System.out.println();
+        System.out.println("Asci Subsequence ");
+        int count = asciiSubsequence("ab", 0, "");
+        System.out.println(" Asci Count : " + count);
 
-        
-
+        System.out.println();
+        System.out.println("Array Subset Sum to Target ");
+        int[] seq = {1,2,3,2,4,2};
+        System.out.println("Total Subsets : "+subsetSumToTarget(seq,0,6,new ArrayList<>()));
 
         // int n = 3;
 
