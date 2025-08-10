@@ -460,6 +460,29 @@ public class BasicRecursion {
 
         return personPossibleWays(n-1) + (n-1) * personPossibleWays(n-2);
     }
+    
+    public static int balanceParenthesis(int n, int open,int close,String ans)
+    {
+        if(close == n){
+            System.out.println("["+ans+"]");
+            return 1;
+        }
+
+        int sum = 0;
+        if(open > close)
+        {
+            sum+= balanceParenthesis(n, open, close+1, ans + ")");
+        }
+
+        if(open < n)
+        {
+            sum+= balanceParenthesis(n, open+1, close, ans+"(");
+        }
+
+        return sum;
+    }
+
+
     public static void main(String[] args) {
         System.out.println("Basic Recursion : ");
 
@@ -585,6 +608,10 @@ public class BasicRecursion {
 
         System.out.println();
         System.out.println("Person Ways to Go On Party : "+personPossibleWays(6));
+
+        System.out.println();
+        System.out.println("Balance Parentheses :");
+        System.out.println("Total Strings Arrays : "+balanceParenthesis(3,0,0,""));
         // int n = 3;
 
         // double length = Math.pow((double)2, (double)n);
