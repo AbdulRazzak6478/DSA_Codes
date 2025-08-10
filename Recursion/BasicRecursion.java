@@ -450,38 +450,54 @@ public class BasicRecursion {
         ans.add(arr[i]);
         int sum = subsetSumToTarget(arr, i + 1, target, ans);
         ans.remove(ans.size() - 1);
-        sum +=subsetSumToTarget(arr, i + 1, target, ans);
+        sum += subsetSumToTarget(arr, i + 1, target, ans);
         return sum;
     }
 
-    public static int personPossibleWays(int n)
-    {
-        if(n == 1 || n == 2) return n; 
+    public static int personPossibleWays(int n) {
+        if (n == 1 || n == 2)
+            return n;
 
-        return personPossibleWays(n-1) + (n-1) * personPossibleWays(n-2);
+        return personPossibleWays(n - 1) + (n - 1) * personPossibleWays(n - 2);
     }
-    
-    public static int balanceParenthesis(int n, int open,int close,String ans)
-    {
-        if(close == n){
-            System.out.println("["+ans+"]");
+
+    public static int balanceParenthesis(int n, int open, int close, String ans) {
+        // Q. 22
+        if (close == n) {
+            System.out.println("[" + ans + "]");
             return 1;
         }
 
         int sum = 0;
-        if(open > close)
-        {
-            sum+= balanceParenthesis(n, open, close+1, ans + ")");
+        if (open > close) {
+            sum += balanceParenthesis(n, open, close + 1, ans + ")");
         }
 
-        if(open < n)
-        {
-            sum+= balanceParenthesis(n, open+1, close, ans+"(");
+        if (open < n) {
+            sum += balanceParenthesis(n, open + 1, close, ans + "(");
         }
 
         return sum;
     }
 
+    public static int powerOfNaturalToX(int x, int power, int n, ArrayList<Integer> ans) {
+        int pt = (int) Math.pow(n, power);
+        if (pt - x == 0) {
+            System.out.println(ans);
+            return 1;
+        }
+        if (n * n > x || pt > x)
+            return 0;
+
+        int sum = 0;
+        if (pt < x) {
+            ans.add(n + 1);
+            sum += powerOfNaturalToX(x - pt, power, n + 1, ans);
+        }
+        ans.remove(ans.size() - 1);
+        sum += powerOfNaturalToX(x, power, n + 1, ans);
+        return sum;
+    }
 
     public static void main(String[] args) {
         System.out.println("Basic Recursion : ");
@@ -603,15 +619,22 @@ public class BasicRecursion {
 
         System.out.println();
         System.out.println("Array Subset Sum to Target ");
-        int[] seq = {1,2,3,2,4,2};
-        System.out.println("Total Subsets : "+subsetSumToTarget(seq,0,6,new ArrayList<>()));
+        int[] seq = { 1, 2, 3, 2, 4, 2 };
+        System.out.println("Total Subsets : " + subsetSumToTarget(seq, 0, 6, new ArrayList<>()));
 
         System.out.println();
-        System.out.println("Person Ways to Go On Party : "+personPossibleWays(6));
+        System.out.println("Person Ways to Go On Party : " + personPossibleWays(6));
 
         System.out.println();
         System.out.println("Balance Parentheses :");
-        System.out.println("Total Strings Arrays : "+balanceParenthesis(3,0,0,""));
+        System.out.println("Total Strings Arrays : " + balanceParenthesis(3, 0, 0, ""));
+
+        System.out.println("Power Of Natural Numbers To X ");
+        int powerCount = powerOfNaturalToX(10, 2, 1, new ArrayList<>());
+        System.out.println("total Counts : " + powerCount);
+
+        int pt = (int) Math.pow(3, 2);
+        System.out.println(pt);
         // int n = 3;
 
         // double length = Math.pow((double)2, (double)n);
