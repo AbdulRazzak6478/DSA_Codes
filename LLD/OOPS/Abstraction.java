@@ -12,7 +12,7 @@ package LLD.OOPS;
  Class :
  1.It is kind of Blueprint of the Real Time Entity 
  2. It Provide implementation details of an interface/abstract class).
- 3.In Class We can define the behaviour of the entity or interface
+ 3.In Class We can define the behavior of the entity or interface
  */
 /*
  * Abstraction :
