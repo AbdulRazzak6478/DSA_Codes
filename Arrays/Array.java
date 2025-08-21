@@ -300,7 +300,7 @@ class Array {
         sc.close();
     }
 
-    public static void main(StringTopic[] args) {
+    public static void main(String [] args) {
         // System.out.println("DataTypes");
         // byte byteType = -127; // range upto -128 to 127, 1 byte
         // short shortType = 148; // 2 byte

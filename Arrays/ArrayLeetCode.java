@@ -144,7 +144,7 @@ public class ArrayLeetCode {
         // return maxWater;
     }
 
-    public static void main(StringTopic[] args) {
+    public static void main(String[] args) {
         System.out.println("Array LeetCode Questions");
 
         // int[] num1 = { 1, 2, 2, 3, 6 };
