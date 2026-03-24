@@ -86,6 +86,11 @@ class ElectricCarWheel extends WheelerCar {
         this.batteryLevel = 100;
     }
 
+    static void print()
+    {
+        System.out.println("Hello World");
+    }
+
     //specialized method for Electric Car
     public void chargeBattery() {
         batteryLevel = 100;
@@ -140,20 +145,24 @@ class ElectricCarWheel extends WheelerCar {
 // Main function
 public class StaticAndDynamicPolymorphism {
     public static void main(String[] args) {
-        WheelerCar myManualCar = new ElectricCarWheel("Ford", "Mustang");
+        ManualCarWheel myManualCar = new ManualCarWheel("Ford", "Mustang");
         myManualCar.startEngine();
         myManualCar.accelerate();
         myManualCar.accelerate();
         myManualCar.brake();
         myManualCar.stopEngine();
+        myManualCar.shiftGear(4);
 
         System.out.println("----------------------");
 
-        WheelerCar myElectricCar = new ElectricCarWheel("Tesla", "Model S");
+        ElectricCarWheel myElectricCar = new ElectricCarWheel("Tesla", "Model S");
         myElectricCar.startEngine();
         myElectricCar.accelerate();
         myElectricCar.accelerate();
         myElectricCar.brake();
         myElectricCar.stopEngine();
+        myElectricCar.chargeBattery();
+        myElectricCar.print();
+        ElectricCarWheel.print();
     }
 }

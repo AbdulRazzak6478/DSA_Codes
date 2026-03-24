@@ -7,12 +7,24 @@ package LLD.OOPS;
   3.It has the Characteristics and methods declaration about the entity.
   4.Interface is a abstraction of the characteristics and behaviors or methods of the Specific Entity
   4.child class will have the responsibility to provide implementation details of all the methods in the interface.
+
+  Java Interface Characteristics
+Cannot have instance variables (only constants)
+Methods are public by default
+Cannot create objects from an interface
+Supports multiple inheritance
  */
 /* 
  Class :
  1.It is kind of Blueprint of the Real Time Entity 
  2. It Provide implementation details of an interface/abstract class).
  3.In Class We can define the behavior of the entity or interface
+Class characteristics
+Can have constructors
+Can have state (variables)
+Can be instantiated (object created)
+Can extend only one class
+Can implement multiple interfaces
  */
 /*
  * Abstraction :
@@ -23,6 +35,17 @@ package LLD.OOPS;
  * Encapsulation :
  1.Bundles an Objects Data its states and methods that operate on that data in single unit, and control access in inner working
  
+
+ Why Abstract Classes Exist
+Abstract classes are used when:
+You want to share common logic
+You want to force subclasses to implement certain behavior
+You want base functionality + extensibility
+In backend systems, abstract classes often represent:
+Base services
+Base controllers
+Base entities
+Template logic
 */
 
 interface Car {
@@ -78,6 +101,7 @@ class SportCar implements Car {
       currentSpeed = 0;
     System.out.println(brand + " " + model + " : Braking! Speed is now " + currentSpeed + " km/h");
   }
+
 
   @Override
   public void stopEngine() {
