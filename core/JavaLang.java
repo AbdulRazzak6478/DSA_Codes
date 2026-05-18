@@ -34,7 +34,7 @@ public class JavaLang {
 
         System.out.println(u.toString());
         System.out.println(u.equals(u2));
-        System.out.println(System.currentTimeMillis() + "time in milliseconds");
+        System.out.println(System.currentTimeMillis() + " time in milliseconds");
         Runtime r = Runtime.getRuntime();
 
         System.out.println(r.totalMemory());
@@ -56,7 +56,23 @@ public class JavaLang {
             System.out.println("Error cought in exception :"+e.getMessage());
         }
 
-        
 
+        // java -> ->bytecode->jvm ( assign memory (stack, shared, metaspace) and Interpreter - executes bytecode line by line, and JIT(just in time compiler) - converts frequently use code to machine code to improve performance
+        
+// .java file
+//    ↓ (javac)
+// .class (bytecode)
+//    ↓ (JVM starts)
+// Class Loader
+//    ↓
+// Memory Allocation (Stack, Heap, Metaspace)
+//    ↓
+// Execution Engine runs main()
+//    ↓
+// Program Output
+//    ↓
+// Garbage Collection (if needed)
+//    ↓
+// Program Ends
     }
 }

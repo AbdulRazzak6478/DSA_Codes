@@ -31,28 +31,28 @@ import java.util.UUID;
 
 // Often related to memory address (but not guaranteed)
 // }
-class User {
-    String id;
+// class User {
+//     String id;
 
-    User(String id) {
-        this.id = id;
-    }
+//     User(String id) {
+//         this.id = id;
+//     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o)
-            return true;
-        if (!(o instanceof User))
-            return false;
-        User user = (User) o;
-        return id.equals(user.id);
-    }
+//     @Override
+//     public boolean equals(Object o) {
+//         if (this == o)
+//             return true;
+//         if (!(o instanceof User))
+//             return false;
+//         User user = (User) o;
+//         return id.equals(user.id);
+//     }
 
-    @Override
-    public int hashCode() {
-        return id.hashCode();
-    }
-}
+//     @Override
+//     public int hashCode() {
+//         return id.hashCode();
+//     }
+// }
 
 class Student implements Comparable<Student> {
 
@@ -134,6 +134,7 @@ public class JavaUtil {
 
         Optional<String> name = Optional.of("Java");
 
+        
         name.ifPresent(System.out::println);
 
         UUID id = UUID.randomUUID();

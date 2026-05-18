@@ -162,7 +162,7 @@ public class StaticAndDynamicPolymorphism {
         myElectricCar.brake();
         myElectricCar.stopEngine();
         myElectricCar.chargeBattery();
-        myElectricCar.print();
+        // myElectricCar.print();
         ElectricCarWheel.print();
     }
 }
