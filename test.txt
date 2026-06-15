@@ -1,1 +1,37 @@
 Hello
+
+https://github.com/AnghelLeonard/Hibernate-SpringBoot
+
+https://github.com/darbyluv2code/spring-boot-3-spring-6-hibernate-for-beginners
+
+https://github.com/callicoder/spring-boot-mysql-rest-api-tutorial
+
+https://github.com/bezkoder/spring-boot-data-jpa-mysql
+
+https://github.com/RameshMF/springboot-thymeleaf-crud-pagination-sorting-webapp
+
+https://github.com/ericus20/spring-boot-starter
+
+https://github.com/jaygajera17/E-commerce-project-springBoot
+
+https://github.com/callicoder/jpa-hibernate-tutorials
+
+📚 Recommended Learning Path:
+Start with: spring-boot-3-spring-6-hibernate-for-beginners (Foundational)
+Practice with: spring-boot-mysql-rest-api-tutorial (Build REST APIs)
+Master: springboot-thymeleaf-crud-pagination-sorting-webapp (Full-stack)
+Optimize: Hibernate-SpringBoot (300+ best practices)
+Apply: E-commerce-project-springBoot (Real-world project)
+
+
+🔑 Key Backend Concepts Covered:
+✅ Spring Boot Fundamentals - Framework setup, configuration
+✅ Hibernate & JPA - ORM, entity mapping, relationships
+✅ Spring Data JPA - Repository pattern, querying
+✅ REST APIs - CRUD operations, request/response handling
+✅ Database Integration - MySQL, PostgreSQL with proper relationships
+✅ Pagination & Sorting - Data management at scale
+✅ Transaction Management - ACID properties, data consistency
+✅ Exception Handling - Error management and validation
+✅ Security - Authentication, authorization basics
+✅ Testing - Unit and integration tests
